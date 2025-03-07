@@ -1,0 +1,14 @@
+<div class="container">
+    <h2>Marcas</h2>
+    <form (ngSubmit)="saveMarca()">
+      <input type="text" [(ngModel)]="formData.nombre" name="nombre" placeholder="Nombre" required>
+      <button type="submit">{{ selectedMarca ? 'Actualizar' : 'Crear' }}</button>
+    </form>
+    <ul>
+      <li *ngFor="let marca of marcas">
+        {{ marca.nombre }}
+        <button (click)="editMarca(marca)">Editar</button>
+        <button (click)="deleteMarca(marca.id)">Eliminar</button>
+      </li>
+    </ul>
+</div>

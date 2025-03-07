@@ -1,0 +1,14 @@
+<div class="container">
+    <h2>Categorías</h2>
+    <form (ngSubmit)="saveCategoria()">
+        <input type="text" [(ngModel)]="formData.nombre" name="nombre" placeholder="Nombre" required>
+        <button type="submit">{{ selectedCategoria ? 'Actualizar' : 'Crear' }}</button>
+    </form>
+    <ul>
+        <li *ngFor="let categoria of categorias">
+        {{ categoria.nombre }}
+        <button (click)="editCategoria(categoria)">Editar</button>
+        <button (click)="deleteCategoria(categoria.id)">Eliminar</button>
+        </li>
+    </ul>
+</div>
